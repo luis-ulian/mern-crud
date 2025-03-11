@@ -5,13 +5,24 @@ const productSchema = new mongoose.Schema(
         name:{
             type:String,
             required: true,
+            unique: true
         },
         quantity:{
-            type: Int,
-            default: 0,
+            type: Number,
+            default: 0
         },
         price:{
-            type: Number
+            type: Number,
+            default: 0
+        },
+        image: {
+            type: String,
+            default: ""
         }
-    }
+    },
+    { timestamps: true }
 );
+
+const Product = new mongoose.model("Product", productSchema);
+
+export default Product;
