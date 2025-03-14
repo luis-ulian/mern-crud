@@ -35,11 +35,37 @@ export const createProduct = async (req, res) => {
         image: newProduct.image
       });
     } else {
-      res.status.json({ message: "Erro ao criar produto: " + error.message });
+      return res.status.json({ message: "Erro ao criar produto: " + error.message });
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log("error in createProduct endpoint: ", error.message);
+    res.status(500).json({message:"Erro interno do servidor."});
+  }
 };
 
-export const updateProduct = async () => {};
+export const updateProduct = async (req,res) => {
+  try {
+    const {name, quantity, price, image} = req.body;
+
+    const {id:productId} = req.params;
+
+    if(!name)  {
+      return res.status(400).json({message: "Você deve preencher o nome do produto."});
+    }
+
+    const product = await Product.findOne({"product.name": {name}, "product._id": {$ne: productId}});
+
+    if(product){
+      return res.status(400).json({message: "Já existe um produto com o mesmo nome. '" + product._id + "'"})
+    }
+
+    const updatedProduct = await Product.findByIdAndUpdate(productId, {name: name, quantity: quantity, price: price, image: image}, {new: true}) // "new: true" retorna novo produto após ser alterado
+
+    res.status(200).json(updatedProduct)
+  } catch (error) {
+    console.log("error in updateProduct endpoint: ", error.message);
+    res.status(500).json({message:"Erro interno do servidor."});
+  }
+};
 
 export const deleteProduct = async () => {};
