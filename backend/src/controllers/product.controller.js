@@ -68,4 +68,14 @@ export const updateProduct = async (req,res) => {
   }
 };
 
-export const deleteProduct = async () => {};
+export const deleteProduct = async (req,res) => {
+  try {
+    const {id:productId} = req.params;
+    await Product.findOneAndDelete({_id: productId});
+
+    res.status(200).json({message:"Produto excluído com sucesso."});
+  } catch (error) {
+    console.log("error in deleteProduct endpoint: " + error.message)
+    res.status(500).json({message: "Erro interno do servidor."})
+  }
+};
