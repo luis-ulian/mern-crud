@@ -75,7 +75,18 @@ export const deleteProduct = async (req,res) => {
 
     res.status(200).json({message:"Produto excluído com sucesso."});
   } catch (error) {
-    console.log("error in deleteProduct endpoint: " + error.message)
-    res.status(500).json({message: "Erro interno do servidor."})
+    console.log("error in deleteProduct endpoint: " + error.message);
+    res.status(500).json({message: "Erro interno do servidor."});
+  }
+};
+
+export const getProducts = async (req,res) => {
+  try {
+    const products = await Product.find();
+
+    res.status(200).json({products});
+  } catch (error) {
+    console.log("error in getProducts endpoint: " + error);
+    res.status(500).json({message:"Erro interno do servidor."});
   }
 };
