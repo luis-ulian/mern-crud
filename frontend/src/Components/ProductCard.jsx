@@ -1,5 +1,5 @@
 import React from 'react'
-import "../Styles/ProductCard.css"
+import "../styles/ProductCard.css"
 
 
 const ProductCard = () => {
@@ -8,8 +8,9 @@ const ProductCard = () => {
         <img className="img" img src="fone.jpg" alt="Produto sem imagem" />
         <h2>Nome do produto</h2>
         <div className='funcButtons'>
+            <button>+</button>
             <button>editar</button>
-            <button>excluir</button>
+            <button>-</button>
         </div>
     </div>
   )
