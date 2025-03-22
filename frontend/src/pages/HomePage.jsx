@@ -6,15 +6,7 @@ const HomePage = () => {
     <div className='homePage'>
       <div className='homePageController'>
         <div className='container'>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {}
         </div>
       </div>
     </div>

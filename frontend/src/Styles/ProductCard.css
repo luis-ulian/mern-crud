@@ -6,12 +6,35 @@
     min-height: 200px;
     text-align: center;
     display: inline-block;
+
+    transition-duration: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    
+    box-shadow: 3px 3px #341943aa;
+    transition-duration: 0.3s;
+    cursor: pointer;
 }
 
 .img {
     margin-top: 10px;
-    max-width: 60%;
+    width: 100%;
     width: auto;
     min-height: 100px;
     max-height: 100px;
+}
+
+.cardText{
+    padding: 4px;
+}
+
+.productName{
+    font-weight: bold;
+
+}
+
+.productPrice {
+
 }

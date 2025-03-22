@@ -2,16 +2,13 @@ import React from 'react'
 import "../styles/ProductCard.css"
 
 
-const ProductCard = () => {
+const ProductCard = ({product}) => {
   return (
     <div className='card'>
-        <img className="img" img src="fone.jpg" alt="Produto sem imagem" />
-        <h2>Nome do produto</h2>
-        <div className='funcButtons'>
-            <button>+</button>
-            <button>editar</button>
-            <button>-</button>
-        </div>
+        <img className="img" img src={product.img} alt={product.name} />
+        <div className='cardText'></div>
+        <h1 className='productName'>{product.name}</h1>
+        <p1 className='productPrice'>R$ {product.price}</p1>
     </div>
   )
 }

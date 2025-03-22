@@ -1,5 +1,6 @@
 import { axiosInstance } from "../lib/axios.js";
 import {create} from "zustand"
+import toast from "react-hot-toast"
 
 export const useProductStore = create((set) => ({
     newProduct: null,
@@ -18,10 +19,13 @@ export const useProductStore = create((set) => ({
             const res = await axiosInstance.post("/products/create", data);
 
             set({newProduct: res});
+
+            toast.success("Produto criado com sucesso!");
     
         } catch (error) {
-            console.log("error at useProductStore createProduct const async func: " + error)
-            return {success: false, message: "Erro interno do servidor."}
+            console.log("error at useProductStore createProduct const func: " + error);
+            
+            toast.error(error.response.data.message);
         }
         finally { 
             set({isCreatingProduct: false});
@@ -36,19 +40,26 @@ export const useProductStore = create((set) => ({
             set({products: res});
         }
         catch (error) {
-            console.log("error at getProducts useProductStore async func: " + error)
+            console.log("error at getProducts useProductStore func: " + error)
+            toast.error(error.response.data.message);
         }
         finally {
             set({isGettingProduct: false});
         }
     },
 
-    /*updateProduct: async (data) => {
+    updateProduct: async (data) => {
         set({isUpdatingProduct: true});
-        try {
-            
+        try{
+            const res = await axiosInstance.post("/products/update/" + data._id, data)
+
         } catch (error) {
-            
+            console.log("error at updateProduct useProductStore func" + error);
+            toast.error(error.response.data.message);
         }
-    }*/
+        finally{
+            set({isUpdatingProduct:false});
+        }
+
+    }
 }));
