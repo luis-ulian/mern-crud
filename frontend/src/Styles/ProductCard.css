@@ -15,10 +15,9 @@
     
     box-shadow: 3px 3px #341943aa;
     transition-duration: 0.3s;
-    cursor: pointer;
 }
 
-.img {
+.productImg {
     margin-top: 10px;
     width: 100%;
     width: auto;
@@ -31,10 +30,33 @@
 }
 
 .productName{
-    font-weight: bold;
-
+    font-size: medium;
+    margin-bottom: 2px;
 }
 
 .productPrice {
+    font-weight: bold;
+    font-size: small;
+    margin-bottom: 4px;
+}
 
+.iconController{
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 10px 0px 0px;
+}
+
+.editIcon{
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.deleteIcon{
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    cursor: pointer;
 }

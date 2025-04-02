@@ -5,6 +5,7 @@ import toast from "react-hot-toast"
 export const useProductStore = create((set) => ({
     newProduct: null,
     products: [],
+    setProducts: (products) => set({products}),
     updatedProduct: null,
     isCreatingProduct: false,
     isGettingProduct: false,
@@ -37,7 +38,7 @@ export const useProductStore = create((set) => ({
         try {
             const res = await axiosInstance.get("/products/get");
 
-            set({products: res});
+            set({products: res.data.products});
         }
         catch (error) {
             console.log("error at getProducts useProductStore func: " + error)
