@@ -52,14 +52,15 @@ export const updateProduct = async (req,res) => {
     if(!name)  {
       return res.status(400).json({message: "Você deve preencher o nome do produto."});
     }
+    
+    //TODO fazer mensagem para saber se existe outro produto com mesmo nome
 
-    const product = await Product.findOne({"product.name": {name}, "product._id": {$ne: productId}});
+    //const sameNameProduct = Product.findOne({"product._id": {$ne: ObjectId(productId)}, "product.name": {name}})
+    //if(sameNameProduct){
+    //  return res.status(400).json({message: "Produto com mesmo nome existente!"})
+    //}
 
-    if(product){
-      return res.status(400).json({message: "Já existe um produto com o mesmo nome. '" + product._id + "'"})
-    }
-
-    const updatedProduct = await Product.findByIdAndUpdate(productId, {name: name, quantity: quantity, price: price, image: image}, {new: true}) // "new: true" retorna novo produto após ser alterado
+    //const updatedProduct = await Product.findByIdAndUpdate(productId, {name: name, quantity: quantity, price: price, image: image}, {new: true}) // "new: true" retorna novo produto após ser alterado
 
     res.status(200).json(updatedProduct)
   } catch (error) {
