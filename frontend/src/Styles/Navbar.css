@@ -17,7 +17,8 @@ header{
     width: 100%;
     align-items: center;
     display: flex;
-
+    justify-content: space-between;
+    
     @media (width >= 40rem) {
         max-width: 40rem;
     }
@@ -29,11 +30,23 @@ header{
     }
 }
 
+.logo {
+    display: inline-block;
+}
+
 .title {
+    float: right;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.logo {
+.logoImg {
+    float: left;
+    max-width: 40px;
+    max-height: 40px;
+    margin-top: 20px;
+}
+
+.createIcon {
     max-width: 40px;
     max-height: 40px;
 }
