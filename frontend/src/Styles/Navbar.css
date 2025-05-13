@@ -32,11 +32,13 @@ header{
 
 .logo {
     display: inline-block;
+    cursor: pointer;
 }
 
 .title {
     float: right;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
 }
 
 .logoImg {

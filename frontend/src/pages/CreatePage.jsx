@@ -1,8 +1,12 @@
 import React from 'react'
-
+import "../styles/CreatePage.css"
 const CreatePage = () => {
   return (
-    <div>CreatePage</div>
+    <div className="createPage">
+      <div className='title'>
+        <h1>Criar Produto</h1>
+      </div>
+    </div>
   )
 }
 

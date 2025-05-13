@@ -7,10 +7,10 @@ const Navbar = () => {
   return (
     <header>
         <div className="headerController">
-          <div className='logo'>
+          <Link to={"/"} className='logo'>
             <img src="ecommerce.png" alt="logo" className='logoImg'/>
             <h1 className='title'>UlianCRUD</h1>
-          </div>
+          </Link>
             <Link to={"/create"}>
               <input type="image" src='create.png' className='createIcon'> 
               </input>

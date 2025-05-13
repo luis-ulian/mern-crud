@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import "../styles/HomePage.css";
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/ProductCard.jsx';
 import { useProductStore } from '../store/useProductStore.js';
 
 const HomePage = () => {

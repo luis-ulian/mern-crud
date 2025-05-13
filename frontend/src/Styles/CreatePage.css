@@ -1,0 +1,25 @@
+.createPage {
+    margin-inline: auto;
+    padding-top: 60px;
+    height: 64px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+    @media (width >= 40rem) {
+        max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+        max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+        max-width: 64rem;
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

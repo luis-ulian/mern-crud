@@ -9,7 +9,7 @@ const ProductCard = ({product}) => {
           <div className='cardText'>
             <p1 className='productName'>{product.name}</p1> 
             <br/>
-            <p1 className='productPrice'>R$ {Intl.NumberFormat("pt-BR", {currency: "BRL"}).format(product.price)}</p1>
+            <p1 className='productPrice'>{Intl.NumberFormat("pt-BR", {style: "currency", currency: "BRL"}).format(product.price)}</p1>
           </div>
           <div className="iconController">
             <input type="image" src="edit.png" className='editIcon '/>
