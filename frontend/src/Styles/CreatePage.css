@@ -1,25 +1,53 @@
 .createPage {
     margin-inline: auto;
-    padding-top: 60px;
-    height: 64px;
-    width: 100%;
+    padding-top: 80px;
     align-items: center;
     display: flex;
-    justify-content: space-between;
-    
-    @media (width >= 40rem) {
-        max-width: 40rem;
-    }
-    @media (width >= 48rem) {
-        max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-        max-width: 64rem;
-    }
 }
 
-.title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.createPageTitle{
+    text-align: center;
+    font-size: 35px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
+}
+
+.box {
+    width: 50%;
+    margin: auto;
+    border: 1px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.256);
+    min-width: 450px;
+}
+
+.form {
+    justify-content: space-between;
+}
+
+.formControl {
+    margin: 10px 10px 10px 20px;
+    
+}
+
+.inputController {
+    position: relative;
+}
+
+.input {
+    height: 20px;
+}
+
+.input[type=text] {
+    width: 50%;
+    min-width: 125px;
+}
+
+.input[type=number] {
+    width: 25%;
+    min-width: 50px;
+}
+
+label {
+    font-family: Helvetica;
+    font-size: 20px;
 }
